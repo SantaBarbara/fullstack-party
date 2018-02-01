@@ -1,0 +1,31 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("../../images/login-background.jpg") no-repeat;
+  background-size: cover;
+  height: 100%;
+
+  & .logo {
+    display: block;
+    background: url("../../images/logo.png") no-repeat;
+    width: 246px;
+    height: 64px;
+  }
+
+  .button {
+    margin-top: 60px;
+    color: $white;
+    font-weight: $weight-bold;
+    font-size: $size-4;
+    width: 370px;
+    padding: 25px 0;
+
+    &:hover {
+      text-decoration: none;
+      color: $white;
+      background: $green-darker;
+    }
+  }
+}

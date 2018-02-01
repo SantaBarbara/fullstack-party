@@ -1,5 +1,8 @@
 @extends('layout')
 
 @section('content')
-    <a href="{{ route('github-login') }}">Login With GitHub</a>
+    <section class="login">
+        <a href="{{ url('') }}" class="logo" title="FullStack Party"></a>
+        <a href="{{ route('github.login') }}" class="button is-success">Login With GitHub</a>
+    </section>
 @endsection

@@ -1,0 +1,50 @@
+// sass-lint:disable no-color-literals
+
+// Colors
+$black: #000000;
+$grey-dark: #333333;
+$grey: #444444;
+$grey-light: #999999;
+$grey-lighter: #bfbfbf;
+
+$orange: #ff9800;
+$yellow: #fbca04;
+$green: #99cc33;
+$green-darker: #86b300;
+$turquoise: #00bcd4;
+$blue: #03a9f4;
+$purple: #9c27b0;
+$red: #e10c02;
+$all-colors: $orange, $yellow, $green, $turquoise, $blue, $purple, $red;
+
+$primary: $green;
+$info: $turquoise;
+$success: $green;
+$warning: $orange;
+$danger: $red;
+
+$body-color: $grey-dark;
+$link: $green;
+$link-hover: $green;
+
+// Typography
+$font-family-sans-serif: "Roboto", sans-serif;
+$family-primary: $font-family-sans-serif;
+$body-family: $font-family-sans-serif;
+$weight-thin: 200;
+$weight-light: 300;
+$weight-normal: 400;
+$weight-semibold: 500;
+$weight-bold: 700;
+
+$size-1: 48px;
+$size-2: 30px;
+$size-3: 20px;
+$size-4: 16px;
+$size-5: 15px;
+$size-6: 14px;
+$size-7: 13px;
+
+$body-size: $size-7;
+
+@import "~bulma";

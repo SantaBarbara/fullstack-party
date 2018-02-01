@@ -20,7 +20,9 @@ class LoginController extends Controller
      */
     public function redirectToProvider()
     {
-        return Socialite::driver('github')->redirect();
+        return Socialite::driver('github')
+            ->scopes(['read:user', 'public_repo'])
+            ->redirect();
     }
 
     /**
@@ -36,6 +38,7 @@ class LoginController extends Controller
             $user = User::firstOrNew(['email' => $github_user->email]);
             $user->name = $github_user->name;
             $user->token = $github_user->token;
+            $user->nickname = $github_user->nickname;
             $user->save();
 
             auth()->login($user, true);
