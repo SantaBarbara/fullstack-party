@@ -1,0 +1,16 @@
+files:
+  include: 'resources/assets/sass/**/*.s+(a|c)ss'
+rules:
+  quotes:
+    - 2
+    -
+      style: double
+  property-sort-order: 0
+  nesting-depth:
+    - 1
+    -
+      max-depth: 6
+  no-color-literals:
+    - 2
+    -
+      allow-rgba: true

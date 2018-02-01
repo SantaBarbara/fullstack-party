@@ -7,12 +7,31 @@
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "eslint": "eslint --fix --ext .js,.vue resources/assets/js --format table --color",
+        "sasslint": "sass-lint -q -v --format table"
+    },
+    "dependencies": {
+        "axios": "^0.17",
+        "bulma": "^0.6",
+        "cross-env": "^5.1",
+        "font-awesome": "^4.7.0",
+        "laravel-mix": "^2.0",
+        "lodash": "4.*",
+        "vue": "^2.5.13"
     },
     "devDependencies": {
-        "axios": "^0.17",
-        "cross-env": "^5.1",
-        "laravel-mix": "^2.0",
-        "vue": "^2.5.7"
+        "babel-eslint": "^8.2.1",
+        "browser-sync": "^2.23.6",
+        "browser-sync-webpack-plugin": "1.*",
+        "eslint": "^4.16.0",
+        "eslint-config-airbnb-base": "11.*",
+        "eslint-friendly-formatter": "3.*",
+        "eslint-import-resolver-webpack": "^0.8.4",
+        "eslint-loader": "1.*",
+        "eslint-plugin-html": "^3.2.2",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-vue": "^4.2.2",
+        "sass-lint": "^1.12.1"
     }
 }
