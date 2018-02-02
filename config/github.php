@@ -41,7 +41,7 @@ return [
         'main' => [
             'token' => null,
             'method' => 'token',
-            // 'cache'      => false,
+            'cache' => env('GITHUB_API_CACHE_ENABLED', false),
             // 'backoff'    => false,
             // 'version'    => 'v3',
             // 'enterprise' => false,

@@ -27,3 +27,16 @@ If you found this task it means we are looking for you!
 - Structure! WE LOVE STRUCTURE!
 - Maybe You have an idea how it should interact with users? Do it! Its on you!
 - Have fun!
+
+## Installation
+
+```bash
+composer install
+yarn install
+yarn run production
+cp .env.example .env
+touch database/database.sqlite
+php artisan migrate
+php artisan serve
+```
+open your browser: [http://127.0.0.1:8000](http://127.0.0.1:8000)
