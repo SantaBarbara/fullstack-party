@@ -1,0 +1,36 @@
+header {
+  padding: 40px 50px;
+  display: flex;
+  justify-content: space-between;
+
+  & .logo {
+    display: block;
+    background: url("../../images/logo-dark.png") no-repeat;
+    width: 115px;
+    height: 30px;
+  }
+
+  & .logout {
+    display: flex;
+    align-items: center;
+    color: $grey-dark;
+    font-size: $size-6;
+
+    & .logout-icon {
+      background-color: $grey-dark;
+      mask: url("../../images/logout.svg") no-repeat;
+      width: 16px;
+      height: 16px;
+      margin-right: 12px;
+    }
+
+    &:hover {
+      color: $green;
+      text-decoration: none;
+
+      & .logout-icon {
+        background-color: $green;
+      }
+    }
+  }
+}

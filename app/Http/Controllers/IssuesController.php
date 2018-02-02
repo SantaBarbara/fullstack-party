@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Filters\IssueComments;
-use App\Http\Requests\Filters\Issue;
 use App\Traits\InteractsWithGitHub;
+use App\Http\Requests\Filters\Issue;
+use App\Http\Requests\Filters\IssueComments;
 
 class IssuesController extends Controller
 {
@@ -30,7 +30,7 @@ class IssuesController extends Controller
         } catch (\Exception $e) {
             $issues = [
                 'total_count' => 0,
-                'items' => []
+                'items' => [],
             ];
         }
 
@@ -40,6 +40,25 @@ class IssuesController extends Controller
         ]);
     }
 
+    public function count(Issue $filter)
+    {
+        $count = $this->issues_count($filter);
+
+        return response()->json([
+            'success' => true,
+            'open' => $count['open'],
+            'closed' => $count['closed'],
+        ]);
+    }
+
+    /**
+     * @param $username
+     * @param $repository
+     * @param $issue_id
+     * @param \App\Http\Requests\Filters\IssueComments $filter
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show($username, $repository, $issue_id, IssueComments $filter)
     {
         try {
@@ -47,7 +66,7 @@ class IssuesController extends Controller
                 $username, $repository, (int) $issue_id, $filter
             );
 
-             return view('issues.show', compact('issue'));
+            return view('issues.show', compact('issue'));
         } catch (\Exception $e) {
             abort(404);
         }

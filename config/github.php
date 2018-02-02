@@ -12,7 +12,6 @@ declare(strict_types=1);
  */
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Connection Name
@@ -39,10 +38,9 @@ return [
     */
 
     'connections' => [
-
         'main' => [
-            'token'      => null,
-            'method'     => 'token',
+            'token' => null,
+            'method' => 'token',
             // 'cache'      => false,
             // 'backoff'    => false,
             // 'version'    => 'v3',

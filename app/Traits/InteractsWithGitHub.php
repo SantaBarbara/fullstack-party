@@ -2,8 +2,8 @@
 
 namespace App\Traits;
 
-use App\Http\Requests\Filters\IssueComments;
 use App\Http\Requests\Filters\Issue;
+use App\Http\Requests\Filters\IssueComments;
 
 trait InteractsWithGitHub
 {
@@ -28,6 +28,16 @@ trait InteractsWithGitHub
             ->setPage($filter->page())
             ->setPerPage($filter->per_page())
             ->issues($filter->make());
+    }
+
+    public function issues_count(Issue $filter)
+    {
+        $search = $this->github()->search()->setPerPage(1);
+
+        $open = $search->issues($filter->state('open')->make())['total_count'];
+        $closed = $search->issues($filter->state('closed')->make())['total_count'];
+
+        return compact('open', 'closed');
     }
 
     /**

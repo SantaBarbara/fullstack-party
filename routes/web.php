@@ -7,5 +7,6 @@ Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback
 Route::get('login/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/issues', 'IssuesController@index')->name('issues');
+Route::get('/issues/count', 'IssuesController@count')->name('issues.count');
 Route::get('/issues/{username}/{repository}/{issue_id}', 'IssuesController@show')->name('issues.show');
 Route::get('/issues/filter', 'IssuesController@filter')->name('issues.filter');

@@ -18,7 +18,9 @@
         "font-awesome": "^4.7.0",
         "laravel-mix": "^2.0",
         "lodash": "4.*",
-        "vue": "^2.5.13"
+        "moment": "^2.20.1",
+        "vue": "^2.5.13",
+        "vuejs-paginate": "^1.6.0"
     },
     "devDependencies": {
         "babel-eslint": "^8.2.1",

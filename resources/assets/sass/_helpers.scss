@@ -1,0 +1,15 @@
+// sass-lint:disable no-important
+
+@for $i from 1 through 5 {
+  .p-#{$i} { padding: #{$i}em  !important; }
+  .pt-#{$i} { padding-top: #{$i}em  !important; }
+  .pr-#{$i} { padding-right: #{$i}em  !important; }
+  .pb-#{$i} { padding-bottom: #{$i}em  !important; }
+  .pl-#{$i} { padding-left: #{$i}em  !important; }
+
+  .m-#{$i} { margin: #{$i}em !important; }
+  .mt-#{$i} { margin-top: #{$i}em  !important; }
+  .mr-#{$i} { margin-right: #{$i}em  !important; }
+  .mb-#{$i} { margin-bottom: #{$i}em  !important; }
+  .ml-#{$i} { margin-left: #{$i}em  !important; }
+}

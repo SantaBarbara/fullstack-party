@@ -11,7 +11,16 @@
     <title>FullStack Party</title>
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="app">
+        @if(auth()->check())
+            <header>
+                <a href="{{ route('issues') }}" class="logo" title="FullStack Party"></a>
+                <a href="{{ route('logout') }}" class="logout">
+                    <i class="logout-icon"></i>
+                    Logout
+                </a>
+            </header>
+        @endif
         @yield('content')
     </div>
 

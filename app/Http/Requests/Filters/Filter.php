@@ -43,7 +43,7 @@ abstract class Filter
     {
         $per_page = (int) $this->request->get('per_page');
 
-        if (!$per_page || $per_page > 100) {
+        if (! $per_page || $per_page > 100) {
             $per_page = static::DEFAULT_ITEMS_PER_PAGE;
         }
 

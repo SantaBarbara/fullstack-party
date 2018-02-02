@@ -1,5 +1,17 @@
 @extends('layout')
 
 @section('content')
-    <a href="{{ route('logout') }}">Logout</a>
+    <section class="issues">
+        <div class="columns">
+            <div class="column is-half-desktop is-half-widescreen is-half-fullhd">
+                <issues></issues>
+            </div>
+            <div class="column is-hidden-mobile is-hidden-tablet-only is-half-desktop is-half-widescreen is-half-fullhd">
+                <div class="banner">
+                    <div class="title">Full Stack Developer Task</div>
+                    <div class="brand">by</div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

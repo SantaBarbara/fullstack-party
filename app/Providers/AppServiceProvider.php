@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use GrahamCampbell\GitHub\GitHubFactory;
 use Illuminate\Support\ServiceProvider;
+use GrahamCampbell\GitHub\GitHubFactory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->singleton('GitHub', function ($app) {
-            if (!auth()->check() && auth()->user()->token) {
+            if (! auth()->check() && auth()->user()->token) {
                 throw new \Exception('GitHub can only be resolved for authenticated users');
             }
 

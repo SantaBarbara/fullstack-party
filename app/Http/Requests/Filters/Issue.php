@@ -33,7 +33,7 @@ class Issue extends Filter
 
         $this->appliedFilters = [
             'state' => self::DEFAULT_STATE,
-            'assignee' => auth()->user()->nickname,
+            'mentions' => auth()->user()->nickname,
         ];
     }
 
@@ -52,22 +52,26 @@ class Issue extends Filter
     }
 
     /**
+     * Apply issue state filter.
+     *
+     * @param $state
+     *
+     * @return \App\Http\Requests\Filters\Issue
+     */
+    public function state($state)
+    {
+        $this->appliedFilters['state'] = in_array($state, ['open', 'closed']) ? $state : self::DEFAULT_STATE;
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     protected function assembleQuery() :string
     {
-       return collect($this->appliedFilters)->map(function ($value, $key) {
-            return $key. ':'. $value;
+        return collect($this->appliedFilters)->map(function ($value, $key) {
+            return $key.':'.$value;
         })->implode(' ');
-    }
-
-    /**
-     * Apply issue state filter.
-     *
-     * @param $state
-     */
-    protected function state($state)
-    {
-        $this->appliedFilters['state'] = in_array($state, ['open', 'closed']) ? $state : self::DEFAULT_STATE;
     }
 }
