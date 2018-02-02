@@ -1,0 +1,38 @@
+.issue-show {
+  & .container {
+    padding: 0 40px;
+  }
+
+  & .header {
+    padding: 40px 0;
+
+    & .back {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  & .issue {
+    & .name {
+      & a {
+        font-size: $size-2;
+
+        & .issue-number {
+          color: $grey-light;
+        }
+      }
+    }
+
+    & .notes {
+      & .button {
+        color: $white;
+
+        & .icon {
+          margin: 0;
+          background-color: $white;
+          height: 17px;
+        }
+      }
+    }
+  }
+}

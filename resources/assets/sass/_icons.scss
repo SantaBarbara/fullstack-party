@@ -1,0 +1,28 @@
+.icon {
+  background-color: $grey-light;
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+
+  &.icon {
+    &-back {
+      mask: url("../images/back.svg") no-repeat;
+    }
+
+    &-exclamation-circle {
+      mask: url("../images/exclamation-circle.svg") no-repeat;
+    }
+
+    &-check-circle {
+      mask: url("../images/check-circle.svg") no-repeat;
+    }
+
+    &-logout {
+      mask: url("../images/logout.svg") no-repeat;
+    }
+  }
+
+  &.is-success {
+    background-color: $green;
+  }
+}

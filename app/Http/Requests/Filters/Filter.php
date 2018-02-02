@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 abstract class Filter
 {
-    const DEFAULT_ITEMS_PER_PAGE = 1;
+    const DEFAULT_ITEMS_PER_PAGE = 10;
 
     const DEFAULT_PAGE = 1;
 

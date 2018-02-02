@@ -4,7 +4,7 @@
     <section class="issues">
         <div class="columns">
             <div class="column is-half-desktop is-half-widescreen is-half-fullhd">
-                <issues></issues>
+                <issues :current_page="{{ $current_page }}"></issues>
             </div>
             <div class="column is-hidden-mobile is-hidden-tablet-only is-half-desktop is-half-widescreen is-half-fullhd">
                 <div class="banner">

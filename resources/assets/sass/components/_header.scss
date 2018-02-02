@@ -1,7 +1,8 @@
 header {
-  padding: 40px 50px;
   display: flex;
   justify-content: space-between;
+  padding: 40px 50px;
+  background: $white;
 
   & .logo {
     display: block;
@@ -16,19 +17,15 @@ header {
     color: $grey-dark;
     font-size: $size-6;
 
-    & .logout-icon {
+    & .icon-logout {
       background-color: $grey-dark;
-      mask: url("../../images/logout.svg") no-repeat;
-      width: 16px;
-      height: 16px;
-      margin-right: 12px;
     }
 
     &:hover {
       color: $green;
       text-decoration: none;
 
-      & .logout-icon {
+      & .icon-logout {
         background-color: $green;
       }
     }

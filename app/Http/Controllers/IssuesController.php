@@ -5,17 +5,22 @@ namespace App\Http\Controllers;
 use App\Traits\InteractsWithGitHub;
 use App\Http\Requests\Filters\Issue;
 use App\Http\Requests\Filters\IssueComments;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class IssuesController extends Controller
 {
     use InteractsWithGitHub;
 
     /**
+     * @param \App\Http\Requests\Filters\Issue $filter
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Issue $filter)
     {
-        return view('issues.index');
+        return view('issues.index', [
+            'current_page' => $filter->page(),
+        ]);
     }
 
     /**
@@ -66,7 +71,15 @@ class IssuesController extends Controller
                 $username, $repository, (int) $issue_id, $filter
             );
 
-            return view('issues.show', compact('issue'));
+            $comments = new LengthAwarePaginator(
+                $issue['comments_list'],
+                $issue['comments'],
+                $filter->per_page(),
+                $filter->page(),
+                ['path' => route('issues.show', [$username, $repository, $issue_id])]
+            );
+
+            return view('issues.show', compact('issue', 'comments'));
         } catch (\Exception $e) {
             abort(404);
         }

@@ -1,0 +1,66 @@
+.comment {
+  display: flex;
+  justify-content: flex-start;
+
+  & .avatar {
+    width: 66px;
+    height: 66px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: transparent;
+    border-radius: 33px;
+    margin-right: 24px;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  & .box {
+    flex: 1;
+    background: $white;
+    border: solid 1px $white;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px 0 $grey-lighter;
+    padding: 0;
+    margin-bottom: 20px;
+
+    & .header {
+      position: relative;
+      padding: 25px 20px;
+      border-bottom: solid 1px $white-grayish;
+
+      &::after,
+      &::before {
+        right: calc(100% + 1px);
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+
+        @include mobile {
+          display: none;
+        }
+      }
+
+      &::after {
+        border-right-color: $white;
+        border-width: 10px;
+        margin-top: -10px;
+      }
+
+      &::before {
+        border-right-color: rgba($grey-lighter, .2);
+        border-width: 11px;
+        margin-top: -11px;
+      }
+    }
+
+    & .body {
+      padding: 30px;
+    }
+  }
+}

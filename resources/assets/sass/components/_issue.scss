@@ -1,0 +1,84 @@
+.issue {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: $white;
+  border: solid 1px $white;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px 0 $grey-lighter;
+  padding: 30px;
+  margin-bottom: 20px;
+
+  & .state {
+    background-color: $green;
+    width: 16px;
+    height: 16px;
+
+    &.is-open {
+      mask: url("../../images/exclamation-circle.svg") no-repeat;
+    }
+
+    &.is-closed {
+      mask: url("../../images/check-circle.svg") no-repeat;
+    }
+  }
+
+  & .information {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0 20px;
+
+    & .name {
+      font-weight: $weight-light;
+      float: left;
+      margin-bottom: 13px;
+
+      & a {
+        color: $grey-dark;
+        font-size: $size-5;
+
+        &:hover {
+          color: $grey-dark;
+        }
+      }
+
+      & .labels {
+        & .tag {
+          color: $grey-dark;
+          font-size: $size-8;
+          font-weight: $weight-bold;
+        }
+      }
+    }
+
+    & .notes {
+      display: flex;
+      align-items: center;
+      color: $grey-lighter;
+      @include mobile {
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+
+        & .button {
+          margin: 0 !important; // sass-lint:disable-line no-important
+        }
+      }
+    }
+  }
+
+  & .comments {
+    color: $grey-light;
+    display: flex;
+    align-items: center;
+
+    & .icon {
+      background-color: $grey-light;
+      mask: url("../../images/comments.svg") no-repeat;
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+    }
+  }
+}

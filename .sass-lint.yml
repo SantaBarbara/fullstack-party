@@ -14,3 +14,5 @@ rules:
     - 2
     -
       allow-rgba: true
+  mixins-before-declarations:
+    - 0

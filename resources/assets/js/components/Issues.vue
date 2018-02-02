@@ -57,6 +57,7 @@
              v-show="pagesCount > 1"
         >
             <paginate
+                :initial-page="current_page - 1"
                 :page-count="pagesCount"
                 container-class="pagination-list"
                 page-link-class="pagination-link"
@@ -77,6 +78,10 @@
     export default {
         name: 'Issues',
 
+        props: {
+            current_page: {type: Number, default: 1}
+        },
+
         components: {
             Paginate
         },
@@ -90,7 +95,7 @@
                     closed: null
                 },
                 filters: {
-                    page: 1,
+                    page: this.current_page,
                     per_page: 10,
                     state: 'closed'
                 }
@@ -159,6 +164,7 @@
 
             changePage(page) {
                 this.filters.page = page;
+                window.history.replaceState('', '', `/issues?page=${page}`);
                 this.$refs.list.scrollTop = 0;
             }
         }

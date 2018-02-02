@@ -67,12 +67,12 @@ trait InteractsWithGitHub
     {
         $issue = $this->issue($repository_owner, $repository, $issue_id);
 
-        $issue['comments'] = $this->github()
+        $issue['comments_list'] = $this->github()
             ->issue()
             ->comments()
             ->setPage($filter->page())
             ->setPerPage($filter->per_page())
-            ->all($repository_owner, $repository, $issue_id);
+            ->all($repository_owner, $repository, $issue_id, $filter->page());
 
         return $issue;
     }

@@ -16,7 +16,7 @@
             <header>
                 <a href="{{ route('issues') }}" class="logo" title="FullStack Party"></a>
                 <a href="{{ route('logout') }}" class="logout">
-                    <i class="logout-icon"></i>
+                    <i class="icon icon-logout"></i>
                     Logout
                 </a>
             </header>
